@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         b2 = (Button) findViewById(R.id.button2);
 
 
-        wm = (WifiManager) getSystemService(WIFI_SERVICE);
+        wm = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
 
         b1.setOnClickListener(new View.OnClickListener() {
 
