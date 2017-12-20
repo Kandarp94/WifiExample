@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
 
     Button b1,b2;
     WifiManager wm;
-    /*Changes are done here*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +32,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Wifi is ON", Toast.LENGTH_SHORT).show();
                 WifiInfo info = wm.getConnectionInfo();
                 String name = info.getMacAddress();
+                int ip = wm.getConnectionInfo().getIpAddress();
                 int nid = info.getNetworkId();
                 int strength = WifiManager.calculateSignalLevel(info.getRssi(), 10);
                 Toast.makeText(MainActivity.this, "Mac Address: "+name+"\nId: "+nid+
-                        "\nStrength: "+strength, Toast.LENGTH_SHORT).show();
+                        "\nStrength: "+strength+"\n IP: "+ip, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 wm.setWifiEnabled(false);
-                Toast.makeText(MainActivity.this, "Wifi is ON", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Wifi is Off", Toast.LENGTH_SHORT).show();
             }
         });
     }
