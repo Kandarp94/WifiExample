@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button b1,b2;
     WifiManager wm;
+    /*Changes are done here*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
